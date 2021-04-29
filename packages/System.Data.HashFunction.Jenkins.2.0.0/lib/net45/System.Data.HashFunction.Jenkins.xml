@@ -1,0 +1,319 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>System.Data.HashFunction.Jenkins</name>
+    </assembly>
+    <members>
+        <member name="T:System.Data.HashFunction.Jenkins.IJenkins">
+            <summary>
+            Implementation of Bob Jenkins' One at a Time, Lookup2, or Lookup3 hash function as specified at http://www.burtleburtle.net/bob/hash/doobs.html.
+            </summary>
+        </member>
+        <member name="T:System.Data.HashFunction.Jenkins.IJenkinsLookup2">
+            <summary>
+            Implementation of Bob Jenkins' Lookup2 hash function as specified at http://burtleburtle.net/bob/c/lookup2.c and http://www.burtleburtle.net/bob/hash/doobs.html.
+            
+            This hash function has been superseded by <seealso cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup3">JenkinsLookup3</seealso>.
+            </summary>
+        </member>
+        <member name="P:System.Data.HashFunction.Jenkins.IJenkinsLookup2.Config">
+            <summary>
+            Configuration used when creating this instance.
+            </summary>
+            <value>
+            A clone of configuration that was used when creating this instance.
+            </value>
+        </member>
+        <member name="T:System.Data.HashFunction.Jenkins.IJenkinsLookup2Config">
+            <summary>
+            Defines a configuration for a <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup2"/> implementation.
+            </summary>
+        </member>
+        <member name="P:System.Data.HashFunction.Jenkins.IJenkinsLookup2Config.Seed">
+            <summary>
+            Gets the seed.
+            </summary>
+            <value>
+            The seed.
+            </value>
+        </member>
+        <member name="M:System.Data.HashFunction.Jenkins.IJenkinsLookup2Config.Clone">
+            <summary>
+            Makes a deep clone of current instance.
+            </summary>
+            <returns>A deep clone of the current instance.</returns>
+        </member>
+        <member name="T:System.Data.HashFunction.Jenkins.IJenkinsLookup2Factory">
+            <summary>
+            Provides instances of implementations of <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup2"/>.
+            </summary>
+        </member>
+        <member name="M:System.Data.HashFunction.Jenkins.IJenkinsLookup2Factory.Create">
+            <summary>
+            Creates a new <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup2"/> instance with the default configuration.
+            </summary>
+            <returns>A <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup2"/> instance.</returns>
+        </member>
+        <member name="M:System.Data.HashFunction.Jenkins.IJenkinsLookup2Factory.Create(System.Data.HashFunction.Jenkins.IJenkinsLookup2Config)">
+            <summary>
+            Creates a new <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup2"/> instance with the specified configuration.
+            </summary>
+            <param name="config">Configuration to use when constructing the instance.</param>
+            <returns>A <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup2"/> instance.</returns>
+        </member>
+        <member name="T:System.Data.HashFunction.Jenkins.IJenkinsLookup3">
+            <summary>
+            Implementation of Bob Jenkins' Lookup3 hash function as specified at http://burtleburtle.net/bob/c/lookup3.c.
+            </summary>
+        </member>
+        <member name="P:System.Data.HashFunction.Jenkins.IJenkinsLookup3.Config">
+            <summary>
+            Configuration used when creating this instance.
+            </summary>
+            <value>
+            A clone of configuration that was used when creating this instance.
+            </value>
+        </member>
+        <member name="T:System.Data.HashFunction.Jenkins.IJenkinsLookup3Config">
+            <summary>
+            Defines a configuration for a <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup3"/> implementation.
+            </summary>
+        </member>
+        <member name="P:System.Data.HashFunction.Jenkins.IJenkinsLookup3Config.HashSizeInBits">
+            <summary>
+            Gets the desired hash size, in bits.
+            </summary>
+            <value>
+            The desired hash size, in bits.
+            </value>
+        </member>
+        <member name="P:System.Data.HashFunction.Jenkins.IJenkinsLookup3Config.Seed">
+            <summary>
+            Gets the seed.
+            </summary>
+            <value>
+            The seed.
+            </value>
+        </member>
+        <member name="P:System.Data.HashFunction.Jenkins.IJenkinsLookup3Config.Seed2">
+            <summary>
+            Gets the second seed.
+            </summary>
+            <value>
+            The second seed.
+            </value>
+        </member>
+        <member name="M:System.Data.HashFunction.Jenkins.IJenkinsLookup3Config.Clone">
+            <summary>
+            Makes a deep clone of current instance.
+            </summary>
+            <returns>A deep clone of the current instance.</returns>
+        </member>
+        <member name="T:System.Data.HashFunction.Jenkins.IJenkinsLookup3Factory">
+            <summary>
+            Provides instances of implementations of <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup3"/>.
+            </summary>
+        </member>
+        <member name="M:System.Data.HashFunction.Jenkins.IJenkinsLookup3Factory.Create">
+            <summary>
+            Creates a new <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup3"/> instance with the default configuration.
+            </summary>
+            <returns>A <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup3"/> instance.</returns>
+        </member>
+        <member name="M:System.Data.HashFunction.Jenkins.IJenkinsLookup3Factory.Create(System.Data.HashFunction.Jenkins.IJenkinsLookup3Config)">
+            <summary>
+            Creates a new <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup3"/> instance with the specified configuration.
+            </summary>
+            <param name="config">Configuration to use when constructing the instance.</param>
+            <returns>A <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup3"/> instance.</returns>
+        </member>
+        <member name="T:System.Data.HashFunction.Jenkins.IJenkinsOneAtATime">
+            <summary>
+            Implementation of Bob Jenkins' One-at-a-Time hash function as specified at http://www.burtleburtle.net/bob/hash/doobs.html (function named "one_at_a_time").
+            
+            This hash function has been superseded by <seealso cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup2">JenkinsLookup2</seealso> and <seealso cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup3">JenkinsLookup3</seealso>.
+            </summary>
+        </member>
+        <member name="T:System.Data.HashFunction.Jenkins.IJenkinsOneAtATimeFactory">
+            <summary>
+            Provides instances of implementations of <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsOneAtATime"/>.
+            </summary>
+        </member>
+        <member name="M:System.Data.HashFunction.Jenkins.IJenkinsOneAtATimeFactory.Create">
+            <summary>
+            Creates a new <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsOneAtATime"/> instance.
+            </summary>
+            <returns>A <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsOneAtATime"/> instance.</returns>
+        </member>
+        <member name="T:System.Data.HashFunction.Jenkins.JenkinsLookup2Config">
+            <summary>
+            Defines a configuration for a <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup2"/> implementation.
+            </summary>
+        </member>
+        <member name="P:System.Data.HashFunction.Jenkins.JenkinsLookup2Config.Seed">
+            <summary>
+            Gets the seed.
+            </summary>
+            <value>
+            The seed.
+            </value>
+        </member>
+        <member name="M:System.Data.HashFunction.Jenkins.JenkinsLookup2Config.Clone">
+            <summary>
+            Makes a deep clone of current instance.
+            </summary>
+            <returns>A deep clone of the current instance.</returns>
+        </member>
+        <member name="T:System.Data.HashFunction.Jenkins.JenkinsLookup2Factory">
+            <summary>
+            Provides instances of implementations of <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup2"/>.
+            </summary>
+        </member>
+        <member name="P:System.Data.HashFunction.Jenkins.JenkinsLookup2Factory.Instance">
+            <summary>
+            Gets the singleton instance of this factory.
+            </summary>
+        </member>
+        <member name="M:System.Data.HashFunction.Jenkins.JenkinsLookup2Factory.Create">
+            <summary>
+            Creates a new <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup2"/> instance with the default configuration.
+            </summary>
+            <returns>A <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup2"/> instance.</returns>
+        </member>
+        <member name="M:System.Data.HashFunction.Jenkins.JenkinsLookup2Factory.Create(System.Data.HashFunction.Jenkins.IJenkinsLookup2Config)">
+            <summary>
+            Creates a new <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup2"/> instance with the specified configuration.
+            </summary>
+            <param name="config">Configuration to use when constructing the instance.</param>
+            <returns>A <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup2"/> instance.</returns>
+        </member>
+        <member name="T:System.Data.HashFunction.Jenkins.JenkinsLookup2_Implementation">
+            <summary>
+            Implementation of Bob Jenkins' Lookup2 hash function as specified at http://burtleburtle.net/bob/c/lookup2.c and http://www.burtleburtle.net/bob/hash/doobs.html.
+            
+            This hash function has been superseded by JenkinsLookup3.
+            </summary>
+        </member>
+        <member name="M:System.Data.HashFunction.Jenkins.JenkinsLookup2_Implementation.#ctor(System.Data.HashFunction.Jenkins.IJenkinsLookup2Config)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Data.HashFunction.Jenkins.JenkinsLookup2_Implementation"/> class.
+            </summary>
+            <param name="config">The configuration to use for this instance.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="config"/></exception>
+        </member>
+        <member name="M:System.Data.HashFunction.Jenkins.JenkinsLookup2_Implementation.ComputeHashInternal(System.Data.HashFunction.Core.Utilities.UnifiedData.IUnifiedData,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:System.Data.HashFunction.Jenkins.JenkinsLookup2_Implementation.ComputeHashAsyncInternal(System.Data.HashFunction.Core.Utilities.UnifiedData.IUnifiedDataAsync,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:System.Data.HashFunction.Jenkins.JenkinsLookup3Config">
+            <summary>
+            Defines a configuration for a <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup2"/> implementation.
+            </summary>
+        </member>
+        <member name="P:System.Data.HashFunction.Jenkins.JenkinsLookup3Config.HashSizeInBits">
+            <summary>
+            Gets the desired hash size, in bits.
+            </summary>
+            <value>
+            The desired hash size, in bits.
+            </value>
+        </member>
+        <member name="P:System.Data.HashFunction.Jenkins.JenkinsLookup3Config.Seed">
+            <summary>
+            Gets the seed.
+            </summary>
+            <value>
+            The seed.
+            </value>
+        </member>
+        <member name="P:System.Data.HashFunction.Jenkins.JenkinsLookup3Config.Seed2">
+            <summary>
+            Gets the second seed.
+            </summary>
+            <value>
+            The second seed.
+            </value>
+        </member>
+        <member name="M:System.Data.HashFunction.Jenkins.JenkinsLookup3Config.Clone">
+            <summary>
+            Makes a deep clone of current instance.
+            </summary>
+            <returns>A deep clone of the current instance.</returns>
+        </member>
+        <member name="T:System.Data.HashFunction.Jenkins.JenkinsLookup3Factory">
+            <summary>
+            Provides instances of implementations of <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup3"/>.
+            </summary>
+        </member>
+        <member name="P:System.Data.HashFunction.Jenkins.JenkinsLookup3Factory.Instance">
+            <summary>
+            Gets the singleton instance of this factory.
+            </summary>
+        </member>
+        <member name="M:System.Data.HashFunction.Jenkins.JenkinsLookup3Factory.Create">
+            <summary>
+            Creates a new <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup3"/> instance with the default configuration.
+            </summary>
+            <returns>A <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup3"/> instance.</returns>
+        </member>
+        <member name="M:System.Data.HashFunction.Jenkins.JenkinsLookup3Factory.Create(System.Data.HashFunction.Jenkins.IJenkinsLookup3Config)">
+            <summary>
+            Creates a new <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup3"/> instance with the specified configuration.
+            </summary>
+            <param name="config">Configuration to use when constructing the instance.</param>
+            <returns>A <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsLookup3"/> instance.</returns>
+        </member>
+        <member name="T:System.Data.HashFunction.Jenkins.JenkinsLookup3_Implementation">
+            <summary>
+            Implementation of Bob Jenkins' Lookup3 hash function as specified at http://burtleburtle.net/bob/c/lookup3.c.
+            </summary>
+        </member>
+        <member name="M:System.Data.HashFunction.Jenkins.JenkinsLookup3_Implementation.#ctor(System.Data.HashFunction.Jenkins.IJenkinsLookup3Config)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Data.HashFunction.Jenkins.JenkinsLookup3_Implementation"/> class.
+            </summary>
+            <param name="config">The configuration to use for this instance.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="config"/></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="config"/>.<see cref="P:System.Data.HashFunction.Jenkins.IJenkinsLookup3Config.HashSizeInBits"/>;<paramref name="config"/>.<see cref="P:System.Data.HashFunction.Jenkins.IJenkinsLookup3Config.HashSizeInBits"/> must be contained within JenkinsLookup3.ValidHashSizes.</exception>
+        </member>
+        <member name="M:System.Data.HashFunction.Jenkins.JenkinsLookup3_Implementation.ComputeHashInternal(System.Data.HashFunction.Core.Utilities.UnifiedData.IUnifiedData,System.Threading.CancellationToken)">
+            <exception cref="T:System.InvalidOperationException">HashSize set to an invalid value.</exception>
+            <inheritdoc />
+        </member>
+        <member name="M:System.Data.HashFunction.Jenkins.JenkinsLookup3_Implementation.ComputeHashAsyncInternal(System.Data.HashFunction.Core.Utilities.UnifiedData.IUnifiedDataAsync,System.Threading.CancellationToken)">
+            <exception cref="T:System.InvalidOperationException">HashSize set to an invalid value.</exception>
+            <inheritdoc />
+        </member>
+        <member name="T:System.Data.HashFunction.Jenkins.JenkinsOneAtATimeFactory">
+            <summary>
+            Provides instances of implementations of <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsOneAtATime"/>.
+            </summary>
+        </member>
+        <member name="P:System.Data.HashFunction.Jenkins.JenkinsOneAtATimeFactory.Instance">
+            <summary>
+            Gets the singleton instance of this factory.
+            </summary>
+        </member>
+        <member name="M:System.Data.HashFunction.Jenkins.JenkinsOneAtATimeFactory.Create">
+            <summary>
+            Creates a new <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsOneAtATime"/> instance.
+            </summary>
+            <returns>A <see cref="T:System.Data.HashFunction.Jenkins.IJenkinsOneAtATime"/> instance.</returns>
+        </member>
+        <member name="T:System.Data.HashFunction.Jenkins.JenkinsOneAtATime_Implementation">
+            <summary>
+            Implementation of Bob Jenkins' One-at-a-Time hash function as specified at http://www.burtleburtle.net/bob/hash/doobs.html (function named "one_at_a_time").
+            
+            This hash function has been superseded by JenkinsLookup2 and JenkinsLookup3.
+            </summary>
+        </member>
+        <member name="M:System.Data.HashFunction.Jenkins.JenkinsOneAtATime_Implementation.ComputeHashInternal(System.Data.HashFunction.Core.Utilities.UnifiedData.IUnifiedData,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:System.Data.HashFunction.Jenkins.JenkinsOneAtATime_Implementation.ComputeHashAsyncInternal(System.Data.HashFunction.Core.Utilities.UnifiedData.IUnifiedDataAsync,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
